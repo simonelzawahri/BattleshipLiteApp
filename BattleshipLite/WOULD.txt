@@ -1,0 +1,123 @@
+﻿
+
+W - Walk Through the Project
+O - Open up Requirements
+
+Basic Requirements:
+
+GENERAL FLOW:
+Two users open console
+ask for user names 
+Ask user 1 to place your ships
+Ask user 2 to place yourr ships
+Let the games begin
+Ask user 1 for shot
+	determine hit or miss
+	determine if game over
+Ask user 2 for shot
+	determine hit or miss
+	determine if game over
+Repeat until someone wins
+Identify winner 
+Congrats and exit
+
+
+ADDITIONAL QUESTIONS / REQUIREMENTS:
+- same console or two different consoles?  -- same
+- do we display / capture stats?  -- NO
+- only one ship per spot.
+- player allowed to shot same spot twice?  -- NO
+- do we display visual grid?  -- YES
+- do we store game data?  - NO
+- Are we ever going to add number of players?  -- Maybe
+- will we add cpu player?  -- Maybe 
+
+
+FULL REQUIREMENTS:
+- 2player game
+- 25 spot grid (A1-E5)
+- each player gets 5 ships
+- each ship takes up 1 spot on grid
+- players take turns firing
+- first person to sink all 5 wins
+- one console for everyone
+
+- no completing the round after 5 sunnk ships -> gameover
+- show visual of Grid with Hits and Misses
+- do not allow user to shoot same spot twice.
+
+
+
+
+
+U - U/I Design
+
+welcome message
+ask user 1 for name
+	ask for 5 ship placements
+	verify valid spot
+	save
+	CLear screen
+ask user 2 for name
+	ask for 5 ship placements
+	verify valid spot
+	save
+	CLear screen
+Display grid of where user 1 has fired == 0
+
+Ask user 1 where u wanna fired on?
+	verify valid spot
+	check results
+	save shot
+Display score
+repeat with user 2
+loop until someone wins
+print winners name and shot count taken shots
+wait for user intput play again? exit?
+
+
+L - Logic Design
+
+GRID:
+A1 A2 A3 A4 A5
+B1 B2 B3 B4 B5
+C1 C2 C3 C4 C5
+D1 D2 D3 D4 D5
+E1 E2 E3 E4 E5 
+
+LOGIC DESIGN:
+clearDisplay()
+GetUserName()
+GetShipPlacement()
+IsSpotValid()
+
+storing ship info list in user class
+
+CreateUserGrid()
+PrintGrid()
+FireShot()
+IsValidShot()
+DisplaySore()
+IsGameover()
+PrintWinner()
+Print shots taken()
+
+
+
+D - Data Design
+
+Class Player
+Name
+MyShips List<GridSpot>
+MyShots List<GridSpot>
+
+Class GridSpot
+SpotLetter - string
+SpotNumber - int
+Status - enum {Full, Empty, Hit, Miss}
+
+
+
+
+
+
